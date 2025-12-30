@@ -78,13 +78,13 @@ class Me:
     def __init__(self):
         self.openai = OpenAI(base_url="https://api.groq.com/openai/v1", api_key=os.getenv("GROQ_API_KEY"))
         self.name = "Ashutosh Nigam"
-        reader = PdfReader("me/linkedin.pdf")
+        reader = PdfReader("linkedin.pdf")
         self.linkedin = ""
         for page in reader.pages:
             text = page.extract_text()
             if text:
                 self.linkedin += text
-        with open("me/summary.txt", "r", encoding="utf-8") as f:
+        with open("summary.txt", "r", encoding="utf-8") as f:
             self.summary = f.read()
 
 
